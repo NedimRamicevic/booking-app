@@ -15,16 +15,20 @@ function Calendar() {
     }, [])
     return (
         <div className="calendar">  
+            <div className="calendarheader">
             {
                 list.map(x => 
-                    <Day data = {x}></Day>
+                    <p>{x}</p>
                     )
             }
+            </div>
+            <div className="daycontainer">
             {list2 ? (
                 list2.map(x => 
                     <Day data = {x}></Day>
                     )
             ):null}
+            </div>
         </div>
     )
 }
