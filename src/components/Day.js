@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Day() {
+function Day({data}) {
     return (
         <div className="day">
-            selam
+            <button>{data}</button>
         </div>
     )
 }
