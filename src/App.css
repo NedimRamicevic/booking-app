@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+.calendar p{
+  padding: 0;
+  margin: 0;
+}
+.calendar button{
+  background-color: white;
+  border: transparent;
+  width:100%;
 }
 .calendar {
   display: flex;
@@ -26,16 +37,35 @@
   grid-column-gap: 1px;
   border-width: 1px;
 }
-.schedule{
+.navs{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.5fr;
+}
+.searchs{
+  grid-column: 4;
+}
+.datePicker{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+.dropdown{
+  grid-column:4 ;
+}
+.dayinterval{
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
 }
-p{
-  padding: 0;
-  margin: 0;
+.weekintervalpicker{
+  display: flex;
+  justify-items: flex-start;
 }
-button{
-  background-color: white;
+.weekintervalpicker button{
   border: transparent;
-  width:100%;
+  background-color: transparent;
+}
+.odalarheader{
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  white-space: pre-line;
+  text-align: center;
 }
