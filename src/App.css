@@ -26,6 +26,10 @@
   grid-column-gap: 1px;
   border-width: 1px;
 }
+.schedule{
+  display: flex;
+  flex-direction: column;
+}
 p{
   padding: 0;
   margin: 0;

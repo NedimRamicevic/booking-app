@@ -4,7 +4,7 @@ import Datepicker from './Datepicker'
 
 function Schedule() {
     return (
-        <div>
+        <div className="schedule">
             <Navbar/>
             <Datepicker/>
         </div>

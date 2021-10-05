@@ -1,6 +1,8 @@
 import React from 'react'
 
 function Datepicker() {
+    const list = [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ]
     return (
         <div className="datePicker">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,10 +16,16 @@ function Datepicker() {
       <text>9 Boş Oda</text>
     </li>
   </ul>
-  <form className="d-flex">
-    <input className="form-control me-2" type="search" placeholder="Aramak İstediğiniz Metni Yazınız" aria-label="Search"/>
-    <button className="btn btn-outline-success" type="submit"></button>
-  </form>
+  <div class="dropdown d-flex">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown link
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    {list ? (list.map(x =>
+        <li><button class="dropdown-item" href="#">{x}</button></li>
+        )):null}
+  </ul>
+</div>
 </div>
 </div>
 </nav>
