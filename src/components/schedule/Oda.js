@@ -14,6 +14,7 @@ export default function Oda({oda}) {
                 list.map(x =>
                         {return  (new Date(oda.gün1)).getDate() <= x & x <=  (new Date(oda.gün2)).getDate()  ?(
                             <div className="odagün">
+                            {/* <div className="odagün" style={{gridColumn: "2/5"}}> */}
                             <h10>{`${oda.kullanıcı1} - ${oda.kullanıcı2}`}</h10>
                             <h11>{`${(new Date(oda.gün1)).getDate()} ${monthNames[(new Date(oda.gün1)).getMonth()]} -${(new Date(oda.gün2)).getDate()} ${monthNames[(new Date(oda.gün2)).getMonth()]} `}</h11>
                             </div>
