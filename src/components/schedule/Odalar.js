@@ -1,37 +1,15 @@
 import React,{useState,useEffect} from 'react'
 import Oda from './Oda'
 
-function Odalar() {
+function Odalar({odalars,dates}) {
         
         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const [list2, setList2] = useState()
-        const [odalar, setodalar] = useState([
-            {
-                odaId : 1,
-                kullanıcı1 : "Nedim",
-                kullanıcı2 : "Neim",
-                gün1 : "9/01/2021",
-                gün2 : "9/3/2021" 
-            },
-            {
-                odaId : 2,
-                kullanıcı1 : "Nedim",
-                kullanıcı2 : "Neim",
-                gün1 : "9/01/2021",
-                gün2 : "9/3/2021" 
-            },
-            {
-                odaId : 3,
-                kullanıcı1 : "Nedim",
-                kullanıcı2 : "Neim",
-                gün1 : "9/01/2021",
-                gün2 : "9/3/2021" 
-            }
-        ])
+        
         useEffect(() => {
             let list1 = []
             for (let index = 1; index <= 7; index++) {  
-                var today = new Date(`2021/10/${index}`);      
+                var today = new Date(`10/${index}/2021`);      
                 list1.push({
                     dayName : days[today.getDay()],
                     day : today.getDate()
