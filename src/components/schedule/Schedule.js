@@ -40,9 +40,7 @@ function Schedule() {
         console.log("msadasdasd")
         if (inputchar === ">") {
             let x = dateInterval
-            console.log(x)
             x.setDate(x.getDate() +7)
-            console.log("x bukadar basittt", x)
             setdateInterval(prev =>(x))
             setodalar(prev =>(
                 prev.filter(i => (dateInterval.getDate() <= (new Date(i.gün1)).getDate() & dateInterval.getDate() < (new Date(i.gün1)).getDate() + 7))
@@ -52,19 +50,22 @@ function Schedule() {
             let x = dateInterval
             x.setDate(x.getDate() - 7)
             setdateInterval(prev =>(x))
+            console.log("interval",dateInterval)
+            console.log("object",x)
             setodalar(prev =>(
-                prev.filter(i => (dateInterval.getDate() <= (new Date(i.gün1)).getDate() & dateInterval.getDate() < (new Date(i.gün1)).getDate() + 7))
+                prev.filter(i => (x.getDate() <= (new Date(i.gün1)).getDate() & x.getDate() < (new Date(i.gün1)).getDate() + 7))
             ))
         }
         
     }
-    console.log("dateintervakssls", dateInterval)
     useEffect(() => {
+
         setodalar(prev =>(
             prev.filter(i => (dateInterval.getDate() <= (new Date(i.gün1)).getDate() & dateInterval.getDate() < (new Date(i.gün1)).getDate() + 7))
-        ))
-
-    }, [])
+            ))
+            
+        }, [])
+        console.log("dateintervakssls", odalar)
     return (
         <div className="schedule">
             <Navbar/>

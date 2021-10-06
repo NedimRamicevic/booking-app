@@ -3,12 +3,15 @@ import React from 'react'
 function Datepicker({dateChanger,dateInterval}) {
     const list = [ "Ocak", "Şubat", "MArt", "Nisan", "Mayıs", "Haziran",
     "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık" ]
-    let interval = dateInterval
-    console.log("datepickerr",dateInterval)
+    let interval =  new Date(`${dateInterval.getMonth() + 1}/ ${dateInterval.getDate()}/${dateInterval.getFullYear()}`)
+
+    let x = new Date(`${dateInterval.getMonth() + 1}/ ${dateInterval.getDate()}/${dateInterval.getFullYear()}`)
+    x.setDate(x.getDate() +6)
+
     return (
         <div className="datePicker">
         <div className="dayinterval">
-            <text>{interval.getDate()} - {interval.getDate() + 6} {list[interval.getMonth()]}</text>
+            <text>{interval.getDate()} {list[interval.getMonth()]} - {x.getDate()} {list[x.getMonth()]}</text>
         </div>
         <div className="weekintervalpicker">
             <button onClick={x => dateChanger("<")}>{"<"}</button>
