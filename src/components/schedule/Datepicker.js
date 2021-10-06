@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Datepicker({dateChanger,dateInterval}) {
+function Datepicker({dateChanger,dateInterval,aySecildi}) {
     const list = [ "Ocak", "Şubat", "MArt", "Nisan", "Mayıs", "Haziran",
     "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık" ]
     let interval =  new Date(`${dateInterval.getMonth() + 1}/ ${dateInterval.getDate()}/${dateInterval.getFullYear()}`)
@@ -24,7 +24,7 @@ function Datepicker({dateChanger,dateInterval}) {
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             {list ?(list.map(x=>
-            <li><a class="dropdown-item" href="#">{x}</a></li> 
+            <li><a class="dropdown-item" href="#" onClick={()=>aySecildi({x})} >{x}</a></li> 
             )):null}
           </ul>
 

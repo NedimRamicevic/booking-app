@@ -37,6 +37,16 @@ function Schedule() {
     ]
     console.log("object",dateInterval)
     const [odalar, setodalar] = useState(initOdalar)
+
+    var aySecildi = (girdi) =>{
+        //buraya ayı seçince hangi aysa o ayın ilk gününü dateIntervale verirsin. Aşagıdakini dinamik yaparsın
+        // her seçilen ay için değişince odalar da otomatik değişir.
+        setdateInterval(new Date("9/1/2021"))
+        setodalar(prev =>(
+            initOdalar.filter(i => (dateInterval.getDate() <= (new Date(i.gün1)).getDate() & dateInterval.getDate() < (new Date(i.gün1)).getDate() + 7))
+        ))
+    }
+
     var dateChanger = (inputchar) =>{
         console.log("msadasdasd")
         if (inputchar === ">") {
@@ -68,7 +78,7 @@ function Schedule() {
     return (
         <div className="schedule">
             <Navbar/>
-            <Datepicker dateChanger = {dateChanger} dateInterval={dateInterval}/>
+            <Datepicker dateChanger = {dateChanger} dateInterval={dateInterval} aySecildi={aySecildi}/>
             <Odalar dates = {dateInterval} odalar ={odalar}/>
         </div>
     )
