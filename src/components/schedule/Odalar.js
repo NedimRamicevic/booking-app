@@ -8,14 +8,12 @@ function Odalar({odalar,dates}) {
             let list1 = []
             let x = new Date(`${dates.getMonth() + 1}/ ${dates.getDate()}/${dates.getFullYear()}`)
             for (let index = interval; index < interval + 7; index++) {  
-                console.log("x değeri nedir ",x)
                 var today = x;      
                 list1.push({
                     dayName : today.toLocaleString("default", { weekday: "long" }),
                     day : today.getDate()
                 })
                 x.setDate(x.getDate() + 1)
-                console.log(x)
                 
             }
             setList2(list1)
