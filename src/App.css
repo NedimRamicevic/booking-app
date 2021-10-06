@@ -71,12 +71,16 @@
 }
 .oda{
   display: grid;
-  grid-template-columns: repeat(8,1fr);
+  grid-template-columns: 1fr 7fr;
+}
+.innerkarosel{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
 .odagün{
   display: flex;
   flex-direction: column;
-  background-color: turquoise;
+  width: 100%;
 }
 h11{
   font-size: 10px;

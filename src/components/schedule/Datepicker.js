@@ -1,16 +1,17 @@
 import React from 'react'
 
-function Datepicker() {
-    const list = [ "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December" ]
+function Datepicker({dateChanger,dateInterval}) {
+    const list = [ "Ocak", "Şubat", "MArt", "Nisan", "Mayıs", "Haziran",
+    "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık" ]
+    console.log(dateInterval)
     return (
         <div className="datePicker">
         <div className="dayinterval">
-            <text>Eylül 1 - 7, 2021</text>
+            <text>{dateInterval.getDate()} - {dateInterval.getDate() + 6} {list[dateInterval.getMonth()]}</text>
         </div>
         <div className="weekintervalpicker">
-            <button>{"<"}</button>
-            <button>{">"}</button>
+            <button onClick={x => dateChanger("<")}>{"<"}</button>
+            <button onClick={x => dateChanger(">")}>{">"}</button>
         </div>
   <div className="dropdown">
 

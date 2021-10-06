@@ -4,7 +4,7 @@ import Datepicker from './Datepicker'
 import Odalar from './Odalar'
 
 function Schedule() {
-    const [dateInterval, setdateInterval] = useState(new Date("9/01/2021"))
+    const [dateInterval, setdateInterval] = useState(new Date("9/1/2021"))
     const [odalar, setodalar] = useState([
         {
             odaId : 1,
@@ -26,25 +26,46 @@ function Schedule() {
             kullanıcı2 : "Neim",
             gün1 : "9/02/2021",
             gün2 : "9/3/2021" 
+        },
+        {
+            odaId : 4,
+            kullanıcı1 : "Nedim",
+            kullanıcı2 : "Neim",
+            gün1 : "9/02/2021",
+            gün2 : "9/3/2021" 
         }
     ])
     var dateChanger = (inputchar) =>{
+        console.log("msadasdasd")
         if (inputchar === ">") {
-            var x = dateInterval
+            let x = dateInterval
             x.setDate(x.getDate() +7)
             setdateInterval(prev =>(x))
+            setodalar(prev =>(
+                prev.filter(i => (dateInterval.getDate() <= (new Date(i.gün1)).getDate() & dateInterval.getDate() < (new Date(i.gün1)).getDate() + 7))
+            ))
         }
         if (inputchar === "<") {
-            var x = dateInterval
+            let x = dateInterval
             x.setDate(x.getDate() - 7)
             setdateInterval(prev =>(x))
+            setodalar(prev =>(
+                prev.filter(i => (dateInterval.getDate() <= (new Date(i.gün1)).getDate() & dateInterval.getDate() < (new Date(i.gün1)).getDate() + 7))
+            ))
         }
     }
+    console.log("dateintervakssls", dateInterval)
+    useEffect(() => {
+        setodalar(prev =>(
+            prev.filter(i => (dateInterval.getDate() <= (new Date(i.gün1)).getDate() & dateInterval.getDate() < (new Date(i.gün1)).getDate() + 7))
+        ))
+
+    }, [])
     return (
         <div className="schedule">
             <Navbar/>
-            <Datepicker dateChanger = {dateChanger}/>
-            <Odalar dates = {dateInterval}/>
+            <Datepicker dateChanger = {dateChanger} dateInterval={dateInterval}/>
+            <Odalar dates = {dateInterval} odalar ={odalar}/>
         </div>
     )
 }
