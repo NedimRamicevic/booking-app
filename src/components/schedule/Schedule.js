@@ -36,36 +36,7 @@ function Schedule() {
         }
     ]
     console.log("object",dateInterval)
-    const [odalar, setodalar] = useState([
-        {
-            odaId : 1,
-            kullanıcı1 : "Nedim",
-            kullanıcı2 : "Neim",
-            gün1 : "9/01/2021",
-            gün2 : "9/4/2021" 
-        },
-        {
-            odaId : 2,
-            kullanıcı1 : "Nedim",
-            kullanıcı2 : "Neim",
-            gün1 : "9/02/2021",
-            gün2 : "9/11/2021" 
-        },
-        {
-            odaId : 3,
-            kullanıcı1 : "Nedim",
-            kullanıcı2 : "Neim",
-            gün1 : "9/02/2021",
-            gün2 : "9/3/2021" 
-        },
-        {
-            odaId : 4,
-            kullanıcı1 : "Nedim",
-            kullanıcı2 : "Neim",
-            gün1 : "9/02/2021",
-            gün2 : "9/3/2021" 
-        }
-    ])
+    const [odalar, setodalar] = useState(initOdalar)
     var dateChanger = (inputchar) =>{
         console.log("msadasdasd")
         if (inputchar === ">") {
@@ -81,7 +52,7 @@ function Schedule() {
             x.setDate(x.getDate() - 7)
             setdateInterval(prev =>(x))
             setodalar(prev =>(
-                initOdalar.filter(i => (x.getDate() < (new Date(i.gün1)).getDate() & x.getDate() < (new Date(i.gün1)).getDate() + 7))
+                initOdalar.filter(i => (x.getDate() <= (new Date(i.gün1)).getDate() & x.getDate() < (new Date(i.gün1)).getDate() + 7))
             ))
         }
         
