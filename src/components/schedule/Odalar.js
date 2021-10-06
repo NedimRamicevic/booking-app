@@ -2,14 +2,13 @@ import React,{useState,useEffect} from 'react'
 import Oda from './Oda'
 
 function Odalar({odalar,dates}) {
-
         const [list2, setList2] = useState()
         const interval = dates.getDate()
         useEffect(() => {
-            console.log("çalışıyoooooo")
             let list1 = []
+            let x = new Date(`${dates.getMonth() + 1}/ ${dates.getDate()}/${dates.getFullYear()}`)
             for (let index = interval; index < interval + 7; index++) {  
-                let x = dates
+                console.log("x değeri nedir ",x)
                 var today = x;      
                 list1.push({
                     dayName : today.toLocaleString("default", { weekday: "long" }),
