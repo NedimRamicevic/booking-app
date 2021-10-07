@@ -18,20 +18,7 @@ export default function Oda({ oda,dates }) {
   const [eventSayısı, setEventSayısı] = useState();
   useEffect(() => {
     let list = [];
-    var iter = 0;
     var num = [];
-    for (const key in oda.events) {
-      if (Object.hasOwnProperty.call(oda.events, key)) {
-        const element = oda.events[key];
-        let son = new Date(element.gün2);
-        let ilk = new Date(element.gün1);
-        if (son.getDate() - ilk.getDate() > 6) {
-          iter = 5;
-        } else {
-          iter =iter + (son.getDate() - ilk.getDate());
-        }
-      }
-    }
     for (let index = 0; index < 7 ; index++) {
         num = []
       for (const key in oda.events) {
@@ -41,19 +28,20 @@ export default function Oda({ oda,dates }) {
               let ilk = new Date(element.gün1);
               let now = new Date(dates)
               now.setDate(now.getDate() + index)
+              console.log("ilk date",ilk)
+              console.log("son date",son)
               console.log("nooooow",now)
               if (ilk <= now & now <= son) {
-                num =[1];
+                console.log("horraaaayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy")
+                num =[1,ilk,son];
                 break;
               } 
           }
       }
       list.push(num);
     }
-    console.log(oda)
-    console.log("doldurss",list)
     setEventSayısı(list);
-  }, [oda]);
+  }, [oda,dates]);
   return (
     <div className="oda">
       <div className="odagün">
@@ -61,8 +49,8 @@ export default function Oda({ oda,dates }) {
       </div>
       <div className="innerkarosel">
         {eventSayısı
-          ? eventSayısı.map((x, index) => {
-              return x > 0 ? (
+          ? eventSayısı.map((x) => {
+              return x[0] > 0 ? (
                 <div
                   className="odagün"
                   style={{
@@ -70,10 +58,10 @@ export default function Oda({ oda,dates }) {
                   }}
                 >
                   <h10>{`${oda.kullanıcı1} - ${oda.kullanıcı2}`}</h10>
-                  <h11>{`${new Date(oda.gün1).getDate()} ${
-                    monthNames[new Date(oda.gün1).getMonth()]
-                  } -${new Date(oda.gün2).getDate()} ${
-                    monthNames[new Date(oda.gün2).getMonth()]
+                  <h11>{`${new Date(x[1]).getDate()} ${
+                    monthNames[new Date(x[1]).getMonth()]
+                  } -${new Date(x[2]).getDate()} ${
+                    monthNames[new Date(x[2]).getMonth()]
                   } `}</h11>
                 </div>
               ) : (
