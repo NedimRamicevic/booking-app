@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function Oda({ oda }) {
+export default function Oda({ oda,dates }) {
   const monthNames = [
     "January",
     "February",
@@ -32,16 +32,18 @@ export default function Oda({ oda }) {
         }
       }
     }
-    for (let index = 1; index < 8 ; index++) {
+    for (let index = 0; index < 7 ; index++) {
         num = []
       for (const key in oda.events) {
           if (Object.hasOwnProperty.call(oda.events, key)) {
               const element = oda.events[key];
               let son = new Date(element.gün2);
               let ilk = new Date(element.gün1);
-              if (index === ilk.getDate()) {
-                num =[ilk.getDate(),son.getDate()];
-                index+= (son.getDate()-ilk.getDate())
+              let now = new Date(dates)
+              now.setDate(now.getDate() + index)
+              console.log("nooooow",now)
+              if (ilk <= now & now <= son) {
+                num =[1];
                 break;
               } 
           }
@@ -60,11 +62,10 @@ export default function Oda({ oda }) {
       <div className="innerkarosel">
         {eventSayısı
           ? eventSayısı.map((x, index) => {
-              return x[1] > 0 ? (
+              return x > 0 ? (
                 <div
                   className="odagün"
                   style={{
-                    gridColumn: `${x[0] }/${x[1] + 1}`,
                     backgroundColor: "turquoise",
                   }}
                 >

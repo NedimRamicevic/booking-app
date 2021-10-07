@@ -12,7 +12,7 @@ function Odalar({ odalar, dates }) {
       kullanıcı2: "Neim",
       events: [
         { gün1: "9/01/2021", gün2: "9/2/2021" },
-        { gün1: "9/03/2021", gün2: "9/5/2021" },
+        { gün1: "9/04/2021", gün2: "9/5/2021" },
       ],
     },
     {
@@ -114,7 +114,7 @@ function Odalar({ odalar, dates }) {
           : null}
       </div>
       <div className="odalars">
-        {filtrelenmiş ? filtrelenmiş.map((oda) => <Oda oda={oda}></Oda>) : null}
+        {filtrelenmiş ? filtrelenmiş.map((oda) => <Oda oda={oda} dates = {dates}></Oda>) : null}
       </div>
     </div>
   );
