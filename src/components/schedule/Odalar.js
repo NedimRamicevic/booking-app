@@ -61,12 +61,11 @@ function Odalar({ odalar, dates }) {
             const element = oda.events[event];
             if (new Date(element.gün1).getMonth() === dates.getMonth()
                 &
-              dates.getDate() <
+              (dates.getDate() <=
+              new Date(element.gün1).getDate() &
               new Date(element.gün1).getDate() <
-              dates.getDate() + 7
+              dates.getDate() + 7)
             ) {
-                console.log("bilgiler", dates)
-                console.log("bilgiss", element.gün1)
                member = {
                 gün1: element.gün1,
                 gün2: element.gün2,
@@ -74,12 +73,10 @@ function Odalar({ odalar, dates }) {
               memba.events.push(member);
             }
           }
-          console.log("2222",filteredList)
         }
     }
     filteredList.push(memba);
     }
-    console.log("object",filteredList)
     setFiltrelenmiş(filteredList)
   };
   useEffect(() => {
@@ -100,8 +97,8 @@ function Odalar({ odalar, dates }) {
     return () => {
       clearInterval(interval);
     };
-  }, [dates, odalar]);
-  console.log("filteredList", filtrelenmiş);
+  }, [dates]);
+  console.log("dateeeeeeee", dates);
   return (
     <div className="">
       <div className="odalarheader">

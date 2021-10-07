@@ -65,11 +65,10 @@ function Schedule() {
     }
 
     var dateChanger = (inputchar) =>{
-        console.log("msadasdasd")
         if (inputchar === ">") {
             let x = dateInterval
             x.setDate(x.getDate() +7)
-            setdateInterval(prev =>(x))
+            setdateInterval(new Date(`${x.getMonth() + 1}/${x.getDate()}/2021`))
             setodalar(prev =>(
                 initOdalar.filter(i => (dateInterval.getDate() <= (new Date(i.gün1)).getDate() & dateInterval.getDate() < (new Date(i.gün1)).getDate() + 7))
             ))
@@ -77,7 +76,7 @@ function Schedule() {
         if (inputchar === "<") {
             let x = dateInterval
             x.setDate(x.getDate() - 7)
-            setdateInterval(prev =>(x))
+            setdateInterval(new Date(`${x.getMonth() + 1}/${x.getDate()}/2021`))
             setodalar(prev =>(
                 initOdalar.filter(i => (x.getDate() <= (new Date(i.gün1)).getDate() & x.getDate() < (new Date(i.gün1)).getDate() + 7))
             ))

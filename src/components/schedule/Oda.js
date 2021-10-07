@@ -16,7 +16,6 @@ export default function Oda({ oda }) {
     "December",
   ];
   const [eventSayısı, setEventSayısı] = useState();
-  console.log(oda);
   useEffect(() => {
     let list = [];
     var iter = 0;
@@ -49,8 +48,10 @@ export default function Oda({ oda }) {
       }
       list.push(num);
     }
+    console.log(oda)
+    console.log("doldurss",list)
     setEventSayısı(list);
-  }, []);
+  }, [oda]);
   return (
     <div className="oda">
       <div className="odagün">
