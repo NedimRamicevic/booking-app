@@ -11,30 +11,44 @@ function Schedule() {
             kullanıcı1 : "Nedim",
             kullanıcı2 : "Neim",
             events : {
-                gün1 : "9/01/2021",
-                gün2 : "9/4/2021" 
-            }
+                1 : {gün1 : "9/01/2021",
+                gün2 : "9/2/2021" },
+                2 : {gün1 : "9/03/2021",
+                gün2 : "9/4/2021" }
+            } 
         },
         {
             odaId : 2,
             kullanıcı1 : "Nedim",
             kullanıcı2 : "Neim",
-            gün1 : "9/02/2021",
-            gün2 : "9/11/2021" 
+            events : {
+                1 : {gün1 : "9/01/2021",
+                gün2 : "9/2/2021" },
+                2 : {gün1 : "9/03/2021",
+                gün2 : "9/4/2021" }
+            } 
         },
         {
             odaId : 3,
             kullanıcı1 : "Nedim",
             kullanıcı2 : "Neim",
-            gün1 : "9/02/2021",
-            gün2 : "9/3/2021" 
+            events : {
+                1 : {gün1 : "9/01/2021",
+                gün2 : "9/2/2021" },
+                2 : {gün1 : "9/03/2021",
+                gün2 : "9/4/2021" }
+            } 
         },
         {
             odaId : 4,
             kullanıcı1 : "Nedim",
             kullanıcı2 : "Neim",
-            gün1 : "9/02/2021",
-            gün2 : "9/3/2021" 
+            events : {
+                1 : {gün1 : "9/01/2021",
+                gün2 : "9/2/2021" },
+                2 : {gün1 : "9/03/2021",
+                gün2 : "9/4/2021" }
+            } 
         }
     ]
     console.log("object",dateInterval)

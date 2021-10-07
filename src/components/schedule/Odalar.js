@@ -4,6 +4,52 @@ import Oda from './Oda'
 function Odalar({odalar,dates}) {
         const [list2, setList2] = useState()
         const interval = dates.getDate()
+        const initOdalar = [
+            {
+                odaId : 1,
+                kullanıcı1 : "Nedim",
+                kullanıcı2 : "Neim",
+                events : {
+                    1 : {gün1 : "9/01/2021",
+                    gün2 : "9/2/2021" },
+                    2 : {gün1 : "9/03/2021",
+                    gün2 : "9/4/2021" }
+                } 
+            },
+            {
+                odaId : 2,
+                kullanıcı1 : "Nedim",
+                kullanıcı2 : "Neim",
+                events : {
+                    1 : {gün1 : "9/01/2021",
+                    gün2 : "9/2/2021" },
+                    2 : {gün1 : "9/03/2021",
+                    gün2 : "9/4/2021" }
+                } 
+            },
+            {
+                odaId : 3,
+                kullanıcı1 : "Nedim",
+                kullanıcı2 : "Neim",
+                events : {
+                    1 : {gün1 : "9/01/2021",
+                    gün2 : "9/2/2021" },
+                    2 : {gün1 : "9/03/2021",
+                    gün2 : "9/4/2021" }
+                } 
+            },
+            {
+                odaId : 4,
+                kullanıcı1 : "Nedim",
+                kullanıcı2 : "Neim",
+                events : {
+                    1 : {gün1 : "9/01/2021",
+                    gün2 : "9/2/2021" },
+                    2 : {gün1 : "9/03/2021",
+                    gün2 : "9/4/2021" }
+                } 
+            }
+        ]
         useEffect(() => {
             let list1 = []
             let x = new Date(`${dates.getMonth() + 1}/ ${dates.getDate()}/${dates.getFullYear()}`)
@@ -33,7 +79,7 @@ function Odalar({odalar,dates}) {
                 </div>
                 <div className="odalars">
                         {odalar ? (
-                            odalar.map(oda=>
+                            initOdalar.map(oda=>
                                 <Oda oda = {oda} ></Oda>
                                 )
                         ):null}
