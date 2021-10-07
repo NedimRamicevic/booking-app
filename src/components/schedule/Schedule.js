@@ -90,7 +90,6 @@ function Schedule() {
             ))
             
         }, [])
-        console.log("dateintervakssls", odalar)
     return (
         <div className="schedule">
             <Navbar/>

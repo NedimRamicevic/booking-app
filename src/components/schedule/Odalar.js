@@ -4,7 +4,7 @@ import Oda from "./Oda";
 function Odalar({ odalar, dates }) {
   const [list2, setList2] = useState();
   const interval = dates.getDate();
-  const [filtrelenmiş, setFiltrelenmiş] = useState([])
+  const [filtrelenmiş, setFiltrelenmiş] = useState([]);
   const initOdalar = [
     {
       odaId: 1,
@@ -44,9 +44,11 @@ function Odalar({ odalar, dates }) {
     },
   ];
   var checkDates = () => {
-      
+    var date1 = new Date(dates);
+    var date2 = new Date(dates);
+    date2.setDate(date2.getDate() + 7);
     var filteredList = [];
-    var member = {}
+    var member = {};
     for (const key in initOdalar) {
       if (Object.hasOwnProperty.call(initOdalar, key)) {
         const oda = initOdalar[key];
@@ -59,14 +61,13 @@ function Odalar({ odalar, dates }) {
         for (const event in oda.events) {
           if (Object.hasOwnProperty.call(oda.events, event)) {
             const element = oda.events[event];
-            if (new Date(element.gün1).getMonth() === dates.getMonth()
-                &
-              (dates.getDate() <=
-              new Date(element.gün1).getDate() &
-              new Date(element.gün1).getDate() <
-              dates.getDate() + 7)
+            if (
+              ((date1 <= new Date(element.gün1)) &
+                (new Date(element.gün1) <= date2)) |
+              ((date1 <= new Date(element.gün2)) &
+                (new Date(element.gün2) <= date2))
             ) {
-               member = {
+              member = {
                 gün1: element.gün1,
                 gün2: element.gün2,
               };
@@ -74,10 +75,10 @@ function Odalar({ odalar, dates }) {
             }
           }
         }
+      }
+      filteredList.push(memba);
     }
-    filteredList.push(memba);
-    }
-    setFiltrelenmiş(filteredList)
+    setFiltrelenmiş(filteredList);
   };
   useEffect(() => {
     checkDates();
@@ -114,7 +115,9 @@ function Odalar({ odalar, dates }) {
           : null}
       </div>
       <div className="odalars">
-        {filtrelenmiş ? filtrelenmiş.map((oda) => <Oda oda={oda} dates = {dates}></Oda>) : null}
+        {filtrelenmiş
+          ? filtrelenmiş.map((oda) => <Oda oda={oda} dates={dates}></Oda>)
+          : null}
       </div>
     </div>
   );
