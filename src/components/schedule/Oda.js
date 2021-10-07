@@ -20,6 +20,7 @@ export default function Oda({ oda }) {
   useEffect(() => {
     let list = [];
     var iter = 0;
+    var num = [];
     for (const key in oda.events) {
       if (Object.hasOwnProperty.call(oda.events, key)) {
         const element = oda.events[key];
@@ -32,23 +33,24 @@ export default function Oda({ oda }) {
         }
       }
     }
-    for (let index = 1; index < 8 - iter; index++) {
+    for (let index = 1; index < 8 ; index++) {
+        num = []
       for (const key in oda.events) {
           if (Object.hasOwnProperty.call(oda.events, key)) {
               const element = oda.events[key];
               let son = new Date(element.gün2);
               let ilk = new Date(element.gün1);
               if (index === ilk.getDate()) {
-                list.push(son.getDate());
-              } else {
-                list.push(0);
-              }
+                num =[ilk.getDate(),son.getDate()];
+                index+= (son.getDate()-ilk.getDate())
+                break;
+              } 
           }
       }
+      list.push(num);
     }
     setEventSayısı(list);
   }, []);
-  console.log("eveeentss",eventSayısı)
   return (
     <div className="oda">
       <div className="odagün">
@@ -57,11 +59,11 @@ export default function Oda({ oda }) {
       <div className="innerkarosel">
         {eventSayısı
           ? eventSayısı.map((x, index) => {
-              return x > 0 ? (
+              return x[1] > 0 ? (
                 <div
                   className="odagün"
                   style={{
-                    gridColumn: `${index + 1}/${x + 1}`,
+                    gridColumn: `${x[0] }/${x[1] + 1}`,
                     backgroundColor: "turquoise",
                   }}
                 >
