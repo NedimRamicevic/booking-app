@@ -21,7 +21,6 @@ function Odalar({odalar,dates}) {
                 clearInterval(interval)
             }
         }, [dates,odalar])
-     console.log("nabeeeerrrr")
         return (
             <div className="">  
                 <div className="odalarheader">

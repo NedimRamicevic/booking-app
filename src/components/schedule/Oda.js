@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from 'react'
 
 export default function Oda({oda}) {
-    const selectedDays = [1,7]
     const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
@@ -9,14 +8,19 @@ export default function Oda({oda}) {
     console.log(oda)
     useEffect(() => {
         let list = []
-        var son = new Date(oda.gün2)
-        var ilk = new Date(oda.gün1)
         var iter = 0
+        for (const key in oda.events) {
+            if (Object.hasOwnProperty.call(oda.events, key)) {
+                const element = oda.events[key];
+                var son = new Date(oda.gün2)
+        var ilk = new Date(oda.gün1)
         if ((son.getDate() - ilk.getDate())>6) {
             iter = 5
         }
         else{
             iter = son.getDate() - ilk.getDate()
+        }
+            }
         }
         for (let index = 1; index < 8 - iter; index++) {
             if (index === ilk.getDate()) {

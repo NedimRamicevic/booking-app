@@ -10,8 +10,10 @@ function Schedule() {
             odaId : 1,
             kullanıcı1 : "Nedim",
             kullanıcı2 : "Neim",
-            gün1 : "9/01/2021",
-            gün2 : "9/4/2021" 
+            events : {
+                gün1 : "9/01/2021",
+                gün2 : "9/4/2021" 
+            }
         },
         {
             odaId : 2,
@@ -41,9 +43,10 @@ function Schedule() {
     var aySecildi = (girdi) =>{
         //buraya ayı seçince hangi aysa o ayın ilk gününü dateIntervale verirsin. Aşagıdakini dinamik yaparsın
         // her seçilen ay için değişince odalar da otomatik değişir.
-        setdateInterval(new Date("9/1/2021"))
+        setdateInterval(new Date(`${girdi}/1/2021`))
+        let newDate = new Date(`${girdi}/1/2021`)
         setodalar(prev =>(
-            initOdalar.filter(i => (dateInterval.getDate() <= (new Date(i.gün1)).getDate() & dateInterval.getDate() < (new Date(i.gün1)).getDate() + 7))
+            initOdalar.filter(i =>newDate.getFullYear() === (new Date(i.gün1)).getFullYear() & newDate.getMonth() === (new Date(i.gün1)).getMonth() & (newDate.getDate() <= (new Date(i.gün1)).getDate() & newDate.getDate() < (new Date(i.gün1)).getDate() + 7))
         ))
     }
 
