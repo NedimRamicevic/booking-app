@@ -6,7 +6,6 @@ import {DateProvider} from '../Contexts/DateContext'
 function Datepicker() {
 
   const value = React.useContext(DateProvider)
-  console.log("------------------------------------------------",value)
   const dateInterval = value.dateInterval.dateInterval
   const setdateInterval = value.dateInterval.setDateInterval
   
@@ -16,12 +15,7 @@ function Datepicker() {
     x.setDate(x.getDate() +6)
 
     var aySecildi = (girdi) =>{
-      console.log("assssssssssssssssssssssssssssssssssssssssssss",girdi)
-      //buraya ayı seçince hangi aysa o ayın ilk gününü dateIntervale verirsin. Aşagıdakini dinamik yaparsın
-      // her seçilen ay için değişince odalar da otomatik değişir.
       setdateInterval(new Date(`${girdi}/1/2021`))
-
-
   }
   var dateUp = () =>{
         let x = dateInterval
