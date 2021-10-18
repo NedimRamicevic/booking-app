@@ -7,7 +7,7 @@ function Odalar() {
   const value = React.useContext(DateProvider)
   const dates = value.dateInterval.dateInterval
   const initOdalar = value.odalar.odalar
-  
+
   const [list2, setList2] = useState();
   const interval = dates.getDate();
   const [filtrelenmiş, setFiltrelenmiş] = useState([]);
@@ -23,8 +23,6 @@ function Odalar() {
         const oda = initOdalar[key];
         var memba = {
           odaId: oda.odaId,
-          kullanıcı1: oda.kullanıcı1,
-          kullanıcı2: oda.kullanıcı1,
           events: [],
         };
         for (const event in oda.events) {
