@@ -5,7 +5,7 @@ import {DateProvider} from '../Contexts/DateContext'
 export default function Oda({ oda }) {
   const value = React.useContext(DateProvider)
   const dates = value.dateInterval.dateInterval
-
+  console.log("ssssssssssssssdadadddddddddddddddddddddddd",oda)
 
   const [eventSayısı, setEventSayısı] = useState();
   useEffect(() => {
@@ -16,8 +16,8 @@ export default function Oda({ oda }) {
       for (const key in oda.events) {
           if (Object.hasOwnProperty.call(oda.events, key)) {
               const element = oda.events[key];
-              let son = new Date(element.gün2);
-              let ilk = new Date(element.gün1);
+              let son = new Date(element.günler.gün2);
+              let ilk = new Date(element.günler.gün1);
               let now = new Date(dates)
               now.setDate(now.getDate() + index)
               console.log("ilk date",ilk)
@@ -49,7 +49,7 @@ export default function Oda({ oda }) {
                     backgroundColor: "turquoise",
                   }}
                 >
-                  <h10>{`${oda.kullanıcı1} - ${oda.kullanıcı2}`}</h10>
+                  <h10>{`${oda.events[0].kullanıcılar.kullanıcı1} - ${oda.events[0].kullanıcılar.kullanıcı2}`}</h10>
                   <h11>{`${new Date(x[1]).getDate()} ${
                     monthNames[new Date(x[1]).getMonth()]
                   } -${new Date(x[2]).getDate()} ${

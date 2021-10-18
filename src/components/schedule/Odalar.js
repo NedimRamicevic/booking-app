@@ -35,14 +35,15 @@ function Odalar() {
                 (new Date(element.günler.gün2) <= date2))
             ) {
               member = {
-               günler :{ gün1: element.gün1,
-                gün2: element.gün2,},
+               günler :{ gün1: element.günler.gün1,
+                gün2: element.günler.gün2,},
 
                 kullanıcılar : {
                   kullanıcı1 : element.kullanıcılar.kullanıcı1,
                   kullanıcı2 : element.kullanıcılar.kullanıcı2
                 }
-              };
+              }
+              console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",member)
               memba.events.push(member);
             }
           }
