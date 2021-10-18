@@ -50,12 +50,12 @@ function Datepicker() {
         </div>
   <div className="dropdown">
 
-          <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             {monthsList ?(monthsList.map((x,index)=>
-            <li><a class="dropdown-item" href="/" onClick={() => aySecildi(index+1)} >{x}</a></li> 
+            <li><a class="dropdown-item" href="#" onClick={() => aySecildi(index+1)} >{x}</a></li> 
             )):null}
           </ul>
 
