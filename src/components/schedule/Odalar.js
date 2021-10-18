@@ -29,14 +29,19 @@ function Odalar() {
           if (Object.hasOwnProperty.call(oda.events, event)) {
             const element = oda.events[event];
             if (
-              ((date1 <= new Date(element.gün1)) &
-                (new Date(element.gün1) <= date2)) |
-              ((date1 <= new Date(element.gün2)) &
-                (new Date(element.gün2) <= date2))
+              ((date1 <= new Date(element.günler.gün1)) &
+                (new Date(element.günler.gün1) <= date2)) |
+              ((date1 <= new Date(element.günler.gün2)) &
+                (new Date(element.günler.gün2) <= date2))
             ) {
               member = {
-                gün1: element.gün1,
-                gün2: element.gün2,
+               günler :{ gün1: element.gün1,
+                gün2: element.gün2,},
+                
+                kullanıcılar : {
+                  kullanıcı1 : element.kullanıcılar.kullanıcı1,
+                  kullanıcı2 : element.kullanıcılar.kullanıcı2
+                }
               };
               memba.events.push(member);
             }
