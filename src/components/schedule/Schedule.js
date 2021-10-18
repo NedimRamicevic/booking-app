@@ -2,55 +2,10 @@ import React,{useEffect,useState} from 'react'
 import Navbar from './Navbar'
 import Datepicker from './Datepicker'
 import Odalar from './Odalar'
-
+import DateContext from '../Contexts/DateContext'
 function Schedule() {
     const [dateInterval, setdateInterval] = useState(new Date("9/1/2021"))
-    const initOdalar = [
-        {
-            odaId : 1,
-            kullanıcı1 : "Nedim",
-            kullanıcı2 : "Neim",
-            events : {
-                1 : {gün1 : "9/01/2021",
-                gün2 : "9/2/2021" },
-                2 : {gün1 : "9/03/2021",
-                gün2 : "9/4/2021" }
-            } 
-        },
-        {
-            odaId : 2,
-            kullanıcı1 : "Nedim",
-            kullanıcı2 : "Neim",
-            events : {
-                1 : {gün1 : "9/01/2021",
-                gün2 : "9/2/2021" },
-                2 : {gün1 : "9/03/2021",
-                gün2 : "9/4/2021" }
-            } 
-        },
-        {
-            odaId : 3,
-            kullanıcı1 : "Nedim",
-            kullanıcı2 : "Neim",
-            events : {
-                1 : {gün1 : "9/01/2021",
-                gün2 : "9/2/2021" },
-                2 : {gün1 : "9/03/2021",
-                gün2 : "9/4/2021" }
-            } 
-        },
-        {
-            odaId : 4,
-            kullanıcı1 : "Nedim",
-            kullanıcı2 : "Neim",
-            events : {
-                1 : {gün1 : "9/01/2021",
-                gün2 : "9/2/2021" },
-                2 : {gün1 : "9/03/2021",
-                gün2 : "9/4/2021" }
-            } 
-        }
-    ]
+    
     console.log("object",dateInterval)
     const [odalar, setodalar] = useState(initOdalar)
 
@@ -92,9 +47,11 @@ function Schedule() {
         }, [])
     return (
         <div className="schedule">
-            <Navbar/>
-            <Datepicker dateChanger = {dateChanger} dateInterval={dateInterval} aySecildi={aySecildi}/>
-            <Odalar dates = {dateInterval} odalar ={odalar}/>
+            <DateContext>
+                <Navbar/>
+                <Datepicker dateChanger = {dateChanger} dateInterval={dateInterval} aySecildi={aySecildi}/>
+                <Odalar dates = {dateInterval} odalar ={odalar}/>
+            </DateContext>
         </div>
     )
 }
