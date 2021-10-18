@@ -1,48 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Oda from "./Oda";
+import DateProvider from '../Contexts/DateContext'
 
-function Odalar({ odalar, dates }) {
+function Odalar() {
+
+  const value = React.useContext(DateProvider)
+  const dates = value.dateInterval.dateInterval
+  const initOdalar = value.odalar.odalar
+  
   const [list2, setList2] = useState();
   const interval = dates.getDate();
   const [filtrelenmiş, setFiltrelenmiş] = useState([]);
-  const initOdalar = [
-    {
-      odaId: 1,
-      kullanıcı1: "Nedim",
-      kullanıcı2: "Neim",
-      events: [
-        { gün1: "9/01/2021", gün2: "9/2/2021" },
-        { gün1: "9/04/2021", gün2: "9/5/2021" },
-      ],
-    },
-    {
-      odaId: 2,
-      kullanıcı1: "Nedim",
-      kullanıcı2: "Neim",
-      events: [
-        { gün1: "9/01/2021", gün2: "9/2/2021" },
-        { gün1: "9/04/2021", gün2: "9/4/2021" },
-      ],
-    },
-    {
-      odaId: 3,
-      kullanıcı1: "Nedim",
-      kullanıcı2: "Neim",
-      events: [
-        { gün1: "9/01/2021", gün2: "9/2/2021" },
-        { gün1: "9/04/2021", gün2: "9/6/2021" },
-      ],
-    },
-    {
-      odaId: 4,
-      kullanıcı1: "Nedim",
-      kullanıcı2: "Neim",
-      events: [
-        { gün1: "9/01/2021", gün2: "9/2/2021" },
-        { gün1: "9/03/2021", gün2: "9/4/2021" },
-      ],
-    },
-  ];
+  
   var checkDates = () => {
     var date1 = new Date(dates);
     var date2 = new Date(dates);
