@@ -37,7 +37,7 @@ function Odalar() {
               member = {
                günler :{ gün1: element.gün1,
                 gün2: element.gün2,},
-                
+
                 kullanıcılar : {
                   kullanıcı1 : element.kullanıcılar.kullanıcı1,
                   kullanıcı2 : element.kullanıcılar.kullanıcı2
@@ -88,7 +88,7 @@ function Odalar() {
       </div>
       <div className="odalars">
         {filtrelenmiş
-          ? filtrelenmiş.map((oda) => <Oda oda={oda} dates={dates}></Oda>)
+          ? filtrelenmiş.map((oda) => <Oda oda={oda} ></Oda>)
           : null}
       </div>
     </div>

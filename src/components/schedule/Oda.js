@@ -1,20 +1,12 @@
 import React, { useEffect, useState } from "react";
+import monthNames from '../Contexts/Odalar'
+import DateProvider from '../Contexts/DateContext'
 
-export default function Oda({ oda,dates }) {
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+export default function Oda({ oda }) {
+  const value = React.useContext(DateProvider)
+  const dates = value.dateInterval.dateInterval
+
+  
   const [eventSayısı, setEventSayısı] = useState();
   useEffect(() => {
     let list = [];
