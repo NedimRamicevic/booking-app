@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Oda from "./Oda";
-import DateProvider from '../Contexts/DateContext'
+import {DateProvider} from '../Contexts/DateContext'
 
 function Odalar() {
 

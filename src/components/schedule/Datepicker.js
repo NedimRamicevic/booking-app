@@ -1,11 +1,12 @@
 import React from 'react'
-import monthsList from '../Contexts/Odalar'
-import DateProvider from '../Contexts/DateContext'
+import {monthsList} from '../Contexts/Odalar'
+import {DateProvider} from '../Contexts/DateContext'
 
 
 function Datepicker() {
 
   const value = React.useContext(DateProvider)
+  console.log("------------------------------------------------",value)
   const dateInterval = value.dateInterval.dateInterval
   const setdateInterval = value.dateInterval.setDateInterval
   const initOdalar = value.odalar.odalar
@@ -58,12 +59,12 @@ function Datepicker() {
         </div>
   <div className="dropdown">
 
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             {monthsList ?(monthsList.map((x,index)=>
-            <li><a class="dropdown-item" href="#" onClick={() => aySecildi(index+1)} >{x}</a></li> 
+            <li><a class="dropdown-item" href="/" onClick={() => aySecildi(index+1)} >{x}</a></li> 
             )):null}
           </ul>
 

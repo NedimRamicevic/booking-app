@@ -1,5 +1,5 @@
 import react,{useState} from 'react'
-import initOdalar from './Odalar'
+import {initOdalar} from './Odalar'
 
 
 export const DateProvider = react.createContext()
