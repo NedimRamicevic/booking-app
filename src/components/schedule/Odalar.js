@@ -43,7 +43,6 @@ function Odalar() {
                   kullanıcı2 : element.kullanıcılar.kullanıcı2
                 }
               }
-              console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",member)
               memba.events.push(member);
             }
           }
@@ -72,7 +71,6 @@ function Odalar() {
       clearInterval(interval);
     };
   }, [dates]);
-  console.log("dateeeeeeee", dates);
   return (
     <div className="">
       <div className="odalarheader">
