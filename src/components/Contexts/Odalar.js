@@ -53,11 +53,11 @@ export var initOdalar = [
             }
         },
             {
-               günler : {gün1 : "9/03/2021",
-            gün2 : "9/4/2021" },
+               günler : {gün1 : "8/27/2021",
+            gün2 : "8/29/2021" },
             kullanıcılar : {
-                kullanıcı1 : "Nedim",
-        kullanıcı2 : "Neim",
+                kullanıcı1 : "Sefa",
+        kullanıcı2 : "Ferit",
             }
         }
         ]
@@ -66,8 +66,8 @@ export var initOdalar = [
         odaId : 4,
         events :  [
             {
-               günler : {gün1 : "9/01/2021",
-            gün2 : "9/2/2021" },
+               günler : {gün1 : "8/25/2021",
+            gün2 : "8/29/2021" },
             kullanıcılar : {
                 kullanıcı1 : "Nedim",
         kullanıcı2 : "Neim",

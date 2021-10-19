@@ -20,7 +20,7 @@ export default function Oda({ oda }) {
               let now = new Date(dates)
               now.setDate(now.getDate() + index)
               if (ilk <= now & now <= son) {
-                num =[1,ilk,son];
+                num =[1,ilk,son,element.kullanıcılar.kullanıcı1,element.kullanıcılar.kullanıcı2];
                 break;
               } 
           }
@@ -44,7 +44,7 @@ export default function Oda({ oda }) {
                     backgroundColor: "turquoise",
                   }}
                 >
-                  <h10>{`${oda.events[0].kullanıcılar.kullanıcı1} - ${oda.events[0].kullanıcılar.kullanıcı2}`}</h10>
+                  <h10>{`${x[3]} - ${x[4]}`}</h10>
                   <h10>{`${new Date(x[1]).getDate()} ${
                     monthNames[new Date(x[1]).getMonth()]
                   } -${new Date(x[2]).getDate()} ${
