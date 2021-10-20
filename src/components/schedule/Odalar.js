@@ -72,7 +72,7 @@ function Odalar() {
     };
   }, [dates]);
   return (
-    <div className="">
+    <div className="odaContainer">
       <div className="odalarheader">
         <p>Odalar</p>
         {list2

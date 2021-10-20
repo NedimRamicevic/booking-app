@@ -11,13 +11,20 @@ export var initOdalar = [
             }
         },
             {
-               günler : {gün1 : "9/03/2021",
-            gün2 : "9/4/2021" },
+               günler : {gün1 : "9/05/2021",
+            gün2 : "9/7/2021" },
             kullanıcılar : {
                 kullanıcı1 : "Nedim",
         kullanıcı2 : "Neim",
             }
-        }
+        },
+        {
+            günler : {gün1 : "8/31/2021",
+         gün2 : "8/31/2021" },
+         kullanıcılar : {
+             kullanıcı1 : "Nedim",
+     kullanıcı2 : "Neim",}
+         }
         ]
     },
     {
@@ -67,15 +74,15 @@ export var initOdalar = [
         events :  [
             {
                günler : {gün1 : "8/25/2021",
-            gün2 : "8/29/2021" },
+            gün2 : "9/2/2021" },
             kullanıcılar : {
-                kullanıcı1 : "Nedim",
+                kullanıcı1 : "Sefa",
         kullanıcı2 : "Neim",
             }
         },
             {
-               günler : {gün1 : "9/03/2021",
-            gün2 : "9/4/2021" },
+               günler : {gün1 : "9/04/2021",
+            gün2 : "9/5/2021" },
             kullanıcılar : {
                 kullanıcı1 : "Nedim",
         kullanıcı2 : "Neim",
