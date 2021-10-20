@@ -24,7 +24,6 @@ export default function Oda({ oda }) {
               if (ilk <= now & now <= son) {
                 if (new Date(ilk) < new Date(dates)) {
                   let iterv = (new Date(son - now).getDate()) - 1
-                  console.log("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq",iterv)
                   num =[1,ilk,son,element.kullanıcılar.kullanıcı1,element.kullanıcılar.kullanıcı2,index+1,iterv];
                   index = index + iterv 
                   
@@ -42,7 +41,6 @@ export default function Oda({ oda }) {
     }
     setEventSayısı(list);
   }, [oda,dates]);
-  console.log("evennttsssss", eventSayısı)
   return (
     <div className="oda">
       <div className="odagün">
